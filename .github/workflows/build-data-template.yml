@@ -23,10 +23,10 @@ jobs:
 
       - name: Convert .dsp to .vcxproj (if needed)
         run: |
-          if not exist ADK\Data_Template\Test.vcxproj (
-            echo "You may need to manually convert Test.dsp to Test.vcxproj using Visual Studio."
+          if (!(Test-Path 'ADK/Data_Template/Test.vcxproj')) {
+            Write-Host "You may need to manually convert Test.dsp to Test.vcxproj using Visual Studio."
             exit 1
-          )
+          }
 
       - name: Build DLL
         run: |
