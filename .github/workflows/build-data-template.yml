@@ -33,7 +33,7 @@ jobs:
           msbuild ADK\Data_Template\Test.vcxproj /p:Configuration=Release
 
       - name: Upload DLL artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Data_Template_DLL
           path: ADK\Data_Template\Release\*.dll
